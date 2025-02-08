@@ -5,8 +5,7 @@ def main():
 
         word_count = countWords(file_contents)
         character_counts = countChars(file_contents)
-        print(len(word_count))
-        print(character_counts)
+        createReport(word_count,character_counts)
         
 
 
@@ -24,6 +23,12 @@ def countChars(file):
         else:
             char_dict[lower_char] = 1
     return char_dict
+def createReport(word_count, char_counts):
+    print(f"{len(word_count)} words were found")
+
+    for char_count in char_counts:
+        if char_count.isalpha() == True:
+            print(f"'{char_count}' was found {char_counts[char_count]} times")
     
     
 
